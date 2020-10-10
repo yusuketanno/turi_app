@@ -1,6 +1,6 @@
 <div class="items-sell-contents">
   <header class="items-sell-header">
-    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+    <%#= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">投稿の情報を入力</h2>
@@ -54,7 +54,7 @@
                 エサ
                 <span class="indispensable">必須</span>
               </div>
-                <%= f.text_area :fish_num, class:"items-text", id:"item-info", placeholder:"商品の説明" ,rows:"7" ,maxlength:"1000" %>
+                <%= f.text_area :bait, class:"items-text", id:"item-info", placeholder:"商品の説明" ,rows:"7" ,maxlength:"1000" %>
                 <%#= f.collection_select(:item_status_id, ItemStatus.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
             </div>
         </div>
