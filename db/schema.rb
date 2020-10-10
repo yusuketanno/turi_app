@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_10_02_030637) do
     t.text "tackle"
     t.string "fish_num"
     t.string "image"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
