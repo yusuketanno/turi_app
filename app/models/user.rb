@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
+    validates :email, uniqueness: true, 
+                        format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
     validates :password, format: { with: /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{6,}\z/ }
   end
 end
