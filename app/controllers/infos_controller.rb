@@ -23,7 +23,7 @@ class InfosController < ApplicationController
   private
 
   def info_params
-    params.require(:info).permit(:image, :fish_name, :text, :tackle, :fish_num)
+    params.require(:info).permit(:image, :fish_name, :text, :tackle, :bait)
     .merge(user_id: current_user.id)
   end
 
