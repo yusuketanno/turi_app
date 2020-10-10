@@ -12,6 +12,19 @@ class InfosController < ApplicationController
   end
 
   def create
+    @info = Info.new(info_params)
+    if @info.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def info_params
+    params.require(:info).permit(:image, :fish_name, :text, :tackle, :bait)
+    .merge(user_id: current_user.id)
   end
 
 end

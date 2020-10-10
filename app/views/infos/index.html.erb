@@ -1,12 +1,24 @@
 <%#= render "shared/header" %>
   <div class="contents row">
     <% @infos.each do |info| %>
-      <div class="content_post" style="background-image: url(<%= info.image %>);">
-        <p><%= info.text %></p>
-        <span class="name">
-          <%= info.fish_name %>
-        </span>
-      </div>
+      <li class='list'>
+        <%= link_to infos_path(info), class: 'item' do %>
+          <div class='item-img-content'>
+            <%= image_tag info.image, class: "item-img" if info.image.attached? %>
+          </div>
+          <div class='item-info'>
+            <h3 class='item-name'>
+              <%= info.fish_name %>
+            </h3>
+          <div class='item-price'>
+            <span><%= info.text %>
+              <div class='star-btn'>
+                <%#= image_tag "star.png", class:"star-icon" %>
+                <span class='star-count'>0</span>
+              </div>
+            </div>
+          </div>
+        <% end %>
     <% end %>
   </div>
 <%#= render "shared/footer" %>

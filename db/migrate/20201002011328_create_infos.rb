@@ -4,8 +4,9 @@ class CreateInfos < ActiveRecord::Migration[6.0]
       t.string :fish_name  
       t.text :text         
       t.text :tackle       
-      t.string :fish_num   
+      t.string :bait   
       t.string :image      
+      t.integer :user_id           ,null: false, foreign_key: true
       t.timestamps
     end
   end
