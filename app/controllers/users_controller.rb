@@ -14,6 +14,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @nickname = current_user.nickname
+    @infos = current_user.infos
+  end
+
 
   private
   def basic_auth
