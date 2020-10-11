@@ -2,7 +2,7 @@
   <div class="contents row">
     <% @infos.each do |info| %>
       <li class='list'>
-        <%= link_to infos_path(info), class: 'item' do %>
+        <%= link_to info_path(info), class: 'item' do %>
           <div class='item-img-content'>
             <%= image_tag info.image, class: "item-img" if info.image.attached? %>
           </div>

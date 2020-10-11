@@ -1,0 +1,87 @@
+
+<%= render "shared/header" %>
+
+<div class="item-show">
+  
+    <div class="item-box">
+      <h2 class="name">
+        <%= @info.fish_name %>
+      </h2>
+      <div class='item-img-content'>
+        <%= image_tag @info.image ,class:"item-box-img" %>
+      </div>
+      <div class="item-price-box">
+        <span class="item-price">
+        ¥<%= @info.text %>
+        </span>
+        <span class="item-postage">
+          (税込) 送料込み
+        </span>
+      </div>
+
+      <%# ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物のとき表示しましょう。 %>
+        <% if user_signed_in? && current_user.id == @info.user_id %>
+          <%#= link_to '商品の編集', edit_info_path(@item.id), method: :get, class: "item-red-btn" %>
+            <p class='or-text'>or</p>
+          <%#= link_to '削除', info_path(@item.id), method: :delete, class:'item-destroy' %>
+        <% end %>
+        <%# ログインしていないユーザーはログイン画面に遷移させ、ログインしていれば購入ページに移動できる %>
+        <% unless user_signed_in? %>
+          <%= link_to '購入画面に進む', new_user_session_path, class:"item-red-btn" %>
+        <% end %>
+      <%# //商品が売れていない場合はこちらを表示しましょう %>
+      <%# //ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
+
+      <div class="item-explain-box">
+        <span><%= @info.text %></span>
+      </div>
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-item">投稿者</th>
+            <td class="detail-value"><%= @info.user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="detail-item">タックル</th>
+            <td class="detail-value"><%= @info.tackle %></td>
+          </tr>
+          <tr>
+            <th class="detail-item">エサ</th>
+            <td class="detail-value"><%= @info.bait %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="option">
+        <div class="favorite-btn">
+          <%#= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+          <span>お気に入り 0</span>
+        </div>
+        <div class="report-btn">
+          <%#= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+          <span>不適切な商品の通報</span>
+        </div>
+      </div>
+    </div>
+    <%# /商品の概要 %>
+
+    <div class="comment-box">
+        <%#= link_to 'この商品にコメントする', new_message_path(@info.id), method: :get, class: "comment-btn" %>
+        <p class="comment-warn">
+          相手のことを考え丁寧なコメントを心がけましょう。
+          <br>
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        </p>
+    </div>
+    <div class="links">
+      <a href="#" class="change-item-btn">
+        ＜ 前の商品
+      </a>
+      <a href="#" class="change-item-btn">
+        後ろの商品 ＞
+      </a>
+    </div>
+    <a href="#" class='another-item'><%= "商品のカテゴリー名" %>をもっと見る</a>
+  
+</div>
+
+<%= render "shared/footer" %>
