@@ -1,6 +1,7 @@
 class InfosController < ApplicationController
 
   before_action :set_info, only: [:show, :edit, :update, :destroy]
+  before_action :search_info, only: [:search1, :search2]
 
   def index
     @infos = Info.all.order("created_at DESC")
@@ -44,6 +45,13 @@ class InfosController < ApplicationController
     end
   end
 
+  def search1
+  end
+
+  def search2
+    @info = @p.result
+  end
+
   private
 
   def info_params
@@ -54,5 +62,10 @@ class InfosController < ApplicationController
   def set_info
     @info = Info.find(params[:id])
   end
+
+  def search_info
+    @p = Info.ransack(params[:q])  # 検索オブジェクトを生成
+  end
+
 
 end
