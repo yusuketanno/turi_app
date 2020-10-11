@@ -1,6 +1,6 @@
 class InfosController < ApplicationController
 
-  before_action :set_info, only: [:show]
+  before_action :set_info, only: [:show, :edit, :update]
 
   def index
     @infos = Info.all.order("created_at DESC")
@@ -23,6 +23,17 @@ class InfosController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @info.update(info_params)
+      redirect_to info_path(@info)
+    else
+      render :edit
+    end
   end
 
   private
