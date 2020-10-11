@@ -13,6 +13,7 @@
     <header class="header">
       <div class="header__bar row">
         <h1 class="grid-6"><a href="/">turi_app</a></h1>
+        <%= link_to '投稿検索', infos_search1_path, class: "subtitle" %></li>
         <% if user_signed_in? %>
         <%= current_user.nickname %>
           <div class="user_nav grid-6">
