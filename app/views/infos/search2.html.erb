@@ -3,7 +3,7 @@
   商品検索
 </h1>
 <%= search_form_for @p, url: infos_search2_path do |f| %>
-  <%= f.label :category_eq, '商品カテゴリー' %>
+  <%= f.label :category_eq, '魚名' %>
   <%#= f.collection_select(:category_id_eq, Category.all, :id, :name, {include_blank: "-----"}) %>
   <br>
   <%= f.label :item_status_eq, '商品状態' %>
