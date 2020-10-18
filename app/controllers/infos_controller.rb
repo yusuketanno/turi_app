@@ -2,6 +2,7 @@ class InfosController < ApplicationController
 
   before_action :set_info, only: [:show, :edit, :update, :destroy]
   before_action :search_info, only: [:search1, :search2]
+  before_action :set_omfos, only: [:new, :create, :edit, :update]
 
   def index
     @infos = Info.all.order("created_at DESC")
@@ -61,6 +62,10 @@ class InfosController < ApplicationController
 
   def set_info
     @info = Info.find(params[:id])
+  end
+
+  def set_infos
+    @infos = Info.all
   end
 
   def search_info
