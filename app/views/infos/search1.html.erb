@@ -7,7 +7,7 @@
   <%= f.collection_select(:fish_name_eq, Info.all, :id, :fish_name, include_blank: '選択してください') %>
   <br>
   <%= f.label :item_status_eq, 'タックル' %>
-  <%#= f.collection_select(:item_status_id_eq, ItemStatus.all, :id, :name, {include_blank: "-----"}) %>
+  <%= f.collection_select(:item_status_id_eq, ItemStatus.all, :id, :name, {include_blank: "-----"}) %>
   <br>
   <%= f.label :delivery_fee_eq, '配送料の負担' %>
   <%#= f.collection_select(:delivery_fee_id_eq, DeliveryFee.all, :id, :name, {include_blank: "-----"}) %>
