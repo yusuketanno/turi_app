@@ -10,7 +10,7 @@
   <%= f.collection_select(:item_status_id_eq, ItemStatus.all, :id, :name, {include_blank: "-----"}) %>
   <br>
   <%= f.label :delivery_fee_eq, '配送料の負担' %>
-  <%#= f.collection_select(:delivery_fee_id_eq, DeliveryFee.all, :id, :name, {include_blank: "-----"}) %>
+  <%= f.collection_select(:delivery_fee_id_eq, DeliveryFee.all, :id, :name, {include_blank: "-----"}) %>
   <br>
   <%= f.label :delivery_date_eq, '配送日の目安' %>
   <%#= f.collection_select(:delivery_date_id_eq, DeliveryDate.all, :id, :name, {include_blank: "-----"}) %>
