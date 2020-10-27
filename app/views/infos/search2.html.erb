@@ -16,7 +16,7 @@
   <%= f.collection_select(:delivery_date_id_eq, DeliveryDate.all, :id, :name, {include_blank: "-----"}) %>
   <br>
   <%= f.label :price, '価格：' %>
-  <%#= f.radio_button :price_lteq, '' %>
+  <%= f.radio_button :price_lteq, '' %>
   指定なし
   <%#= f.radio_button :price_lteq, '1000' %>
   1000円以下
