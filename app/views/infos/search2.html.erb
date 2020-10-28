@@ -7,18 +7,18 @@
   <%= f.collection_select(:fish_name_eq, Info.all, :id, :fish_name, include_blank: '選択してください') %>
   <br>
   <%= f.label :item_status_eq, 'タックル' %>
-  <%#= f.collection_select(:item_status_id_eq, ItemStatus.all, :id, :name, {include_blank: "-----"}) %>
+  <%= f.collection_select(:item_status_id_eq, ItemStatus.all, :id, :name, {include_blank: "-----"}) %>
   <br>
   <%= f.label :delivery_fee_eq, '配送料の負担' %>
-  <%#= f.collection_select(:delivery_fee_id_eq, DeliveryFee.all, :id, :name, {include_blank: "-----"}) %>
+  <%= f.collection_select(:delivery_fee_id_eq, DeliveryFee.all, :id, :name, {include_blank: "-----"}) %>
   <br>
   <%= f.label :delivery_date_eq, '配送日の目安' %>
-  <%#= f.collection_select(:delivery_date_id_eq, DeliveryDate.all, :id, :name, {include_blank: "-----"}) %>
+  <%= f.collection_select(:delivery_date_id_eq, DeliveryDate.all, :id, :name, {include_blank: "-----"}) %>
   <br>
   <%= f.label :price, '価格：' %>
-  <%#= f.radio_button :price_lteq, '' %>
+  <%= f.radio_button :price_lteq, '' %>
   指定なし
-  <%#= f.radio_button :price_lteq, '1000' %>
+  <%= f.radio_button :price_lteq, '1000' %>
   1000円以下
   <%#= f.radio_button :price_lteq, '2500' %>
   2500円以下
